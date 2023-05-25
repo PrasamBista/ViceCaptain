@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> index.html </title>
+    <link rel="icon" href="nightngale.png">
+    <style>
+      *
+{
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    font-family: 'poppins', sans-serif;
+
+}
+.hero{
+    background: #1d2026;
+    min-height: 100vh;
+    width: 100%;
+    color: #fff;
+    position: relative;
+}
+nav{
+    display: flex;
+    align-items: center;
+    padding: 20px 8%;
+}
+nav .logo{
+    width: 160px; 
+    cursor: pointer;
+}
+nav ul{
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    height: 200px;
+    display: inline-block;
+    line-height: 200px;
+    width: 100px;
+    text-align: center;
+}
+button{
+    background: #efefef;
+    height: 30px;
+    width: 60px;
+    border-radius: 60px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition:background 1s;
+}
+button span{
+    display: block;
+    background: #999;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    margin-left: 2px;
+    margin-top: 1px;
+    transition:background 1s , margin-left 0.5s;
+}
+.lampcontainer{
+    position:absolute ;
+    top: -20px;
+    left: 22%;
+    width: 200px;
+}
+.lamp{
+    width: 100%;
+}
+.light{
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    margin-left: -10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.textcontainer
+{
+    max-width: 600px;
+    margin-top: 7%;
+    margin-left: 50%;
+}
+.textcontainer h1{
+    font-size: 50px;
+    font-weight: 200;
+}
+.textcontainer a{
+    text-decoration: none;
+    background: #00986f;
+    padding: 14px 40px;
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 30px;
+    border-radius: 30px;
+}
+.control
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 150px;
+}
+.active{
+    background: green;
+}
+.active span{
+    background: white;
+    margin-left: 31px;
+}
+.on{
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+    <div class="hero">
+         <nav>
+            <a href="">
+                <img src="nightngale.png" class="logo">
+            </a>
+            <ul>
+                <li><a href="">Latest</a></li>
+                <li><a href="">Works To Do</a></li>
+                <li><a href="">Suggestions</a></li>
+            </ul>
+            <button type="button" onclick="toggleBtn()" id="btn"><span></span></button>
+         </nav>
+         <div class="lampcontainer">
+            <img src="lamp.png" class="lamp">
+            <img src="light.png" class="light" id="light">
+         </div>
+         <div class="textcontainer">
+            <h1>
+               Prasam Bista <br> For<br>The School Vice Captain
+            </h1>
+            <p>
+                The perfect school vice captain. Many Agendas and true promises. No fluffs, No fancy Speeches.
+            </p>
+            <a href="">Check The Works Done</a>
+         </div>
+    </div>
+    <script>
+        var btn=document.getElementById("btn");
+        var light=document.getElementById("light");
+        function toggleBtn(){
+            btn.classList.toggle("active")
+            light.classList.toggle("on")
+        }
+    </script>
+</body>
+</html>
